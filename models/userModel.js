@@ -22,11 +22,6 @@ const UserSchema = new mongoose.Schema({
   avatarPublicId: String,
 })
 
-// same as const user = await User.findById(id).select('-password')
-// this points back to the INSTANCE
-// converts to a js object
-// when we use this.toObject(), we create a new object that contains a copy of the current object's properties.
-// using this.toObject() provides additional benefits for security, performance, encapsulation, and customization when converting the object to JSON
 UserSchema.methods.toJSON = function () {
   var obj = this.toObject()
   delete obj.password
