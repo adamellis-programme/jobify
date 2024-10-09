@@ -1,5 +1,5 @@
 import Job from '../models/jobModel.js'
-import User from '../models/UserModel.js'
+import User from '../models/userModel.js'
 import { StatusCodes } from 'http-status-codes'
 
 import cloudinary from 'cloudinary'
