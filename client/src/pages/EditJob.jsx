@@ -6,8 +6,7 @@ import { Form, redirect, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import customFetch from '../utils/customFetch'
 import { BsCloudLightning } from 'react-icons/bs'
-// if access route params in the component we need to use a hook
-// PARAMS same as react router dom useParams()
+
 export const loader = async ({ params }) => {
   console.log(params)
   try {
@@ -15,7 +14,6 @@ export const loader = async ({ params }) => {
     console.log(data)
     return data
   } catch (error) {
-    // if id is incorrect etc
     toast.error(error.response.data.msg)
     return redirect('/dashboard/all-jobs')
   }
@@ -32,7 +30,7 @@ export const action = async ({ request, params }) => {
     toast.success('Job edited successfully')
     return redirect('/dashboard/all-jobs')
   } catch (error) {
-    // if error do not navigate
+
     toast.error(error.response.data.msg)
     return error
   }

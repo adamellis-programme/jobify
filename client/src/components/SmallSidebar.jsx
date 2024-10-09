@@ -1,4 +1,3 @@
-// nav link uses for nav from RRD
 import Wrapper from '../assets/wrappers/SmallSidebar'
 import { FaTimes } from 'react-icons/fa'
 

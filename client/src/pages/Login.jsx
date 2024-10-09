@@ -11,7 +11,7 @@ export const action = async ({ request }) => {
   try {
     await customFetch.post('/auth/login', data)
     toast.success('Login successful')
-    // RE-DIRECT ONLY FOR THE ACTION OR THE LOADER
+
     return redirect('/dashboard')
   } catch (error) {
     toast.error(error?.response?.data?.msg)
@@ -19,7 +19,7 @@ export const action = async ({ request }) => {
   }
 }
 
-// access the errors object by using useActionData
+
 const Login = () => {
   const navigate = useNavigate()
 

@@ -7,7 +7,7 @@ import advancedFormat from 'dayjs/plugin/advancedFormat'
 day.extend(advancedFormat)
 
 const Job = ({ _id, position, company, jobLocation, jobType, createdAt, jobStatus }) => {
-  // console.log(createdAt)
+
   const date = day(createdAt).format('MMM Do, YYYY')
 
   return (

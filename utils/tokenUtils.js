@@ -11,17 +11,3 @@ export const verifyJWT = (token) => {
   const decoded = jwt.verify(token, process.env.JWT_SECRET)
   return decoded
 }
-
-/**
- *-: the token is sent to the frontend 
- *-: and then decoded on the backend
- *
- *-: the cookie 
- * 
- *-: jwt is sent with every request 
- *-: and will be sent in the http cookie
- *
- * 
- * 
-
- */

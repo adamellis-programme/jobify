@@ -21,8 +21,6 @@ export const action = async ({ request }) => {
   }
 }
 
-/// default pending class for the nav link
-
 const AddJob = () => {
   const { user } = useOutletContext()
 
@@ -50,7 +48,6 @@ const AddJob = () => {
             name="jobType"
             labelText="job type"
             defaultValue={JOB_TYPE.FULL_TIME}
-            /// PASS THE OBJECT SO WE GET THE VALUES
             list={Object.values(JOB_TYPE)}
           />
           {/* boolean */}

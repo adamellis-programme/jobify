@@ -1,5 +1,3 @@
-// extends the built in Error class built into javascript
-// ask how to see the Error Class object in the console
 import { StatusCodes } from 'http-status-codes'
 
 export class NotFoundError extends Error {
@@ -33,7 +31,3 @@ export class UnauthorizedError extends Error {
     this.statusCode = StatusCodes.FORBIDDEN
   }
 }
-/**
- * the message is the one logged in the server console  - we need to pass to the Error handler
- * this.name is optinal
- */

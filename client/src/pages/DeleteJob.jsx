@@ -16,9 +16,3 @@ export async function action({ params }) {
   return redirect('/dashboard/all-jobs')
   // return null
 }
-
-// const DeleteJob = () => {
-//   return <div>Delete Job Page</div>
-// }
-
-// export default DeleteJob

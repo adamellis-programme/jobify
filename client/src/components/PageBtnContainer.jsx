@@ -10,27 +10,27 @@ const PageBtnContainer = () => {
 
   const { search, pathname } = useLocation()
   const navigate = useNavigate()
-  // not a explicit return
+
   const pages = Array.from({ length: numOfPages }, (_, index) => index + 1)
 
   const handlePageChange = (pageNumber) => {
     console.log({ search, pathname })
     console.log(pageNumber)
     const searchParams = new URLSearchParams(search)
-    // ... set the page in params
+
     searchParams.set('page', pageNumber)
-    // ... construct the path
+
     navigate(`${pathname}?${searchParams.toString()}`)
   }
 
-  // prev and next we will not see changes unless we change the url
+
   return (
     <Wrapper>
       <button
         className="btn prev-btn"
         onClick={() => {
           let prevPage = currentPage - 1
-          if (prevPage < 1) prevPage = numOfPages // to the last page
+          if (prevPage < 1) prevPage = numOfPages 
           handlePageChange(prevPage)
         }}
       >

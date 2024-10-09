@@ -18,7 +18,7 @@ const Stats = () => {
   return (
     <>
       <StatsContainer defaultStats={defaultStats} />
-      {/* only show chart if length */}
+
       {monthlyApplications?.length > 0 && <ChartsContainer data={monthlyApplications} />}
     </>
   )

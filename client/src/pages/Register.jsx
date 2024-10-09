@@ -3,16 +3,7 @@ import Wrapper from '../assets/wrappers/RegisterAndLoginPage'
 import { Form, redirect, Link } from 'react-router-dom'
 import customFetch from '../utils/customFetch'
 import { toast } from 'react-toastify'
-// export const action = async (data) => {
-//   console.log(data)
 
-//   return null
-// }
-
-// form data uses the name attrubutes
-// empty values set on server
-
-// USE THE NETWORK TAB TO SEE THE MESSAGE SENT BACK AND SEE THE STATUS CODE
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
@@ -24,7 +15,7 @@ export const action = async ({ request }) => {
     return redirect('/login')
   } catch (error) {
     console.log(error)
-    // optinal chaining incase we get axios error
+
     toast.error(error?.response?.data?.msg)
     return error
   }

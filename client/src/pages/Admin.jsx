@@ -2,11 +2,11 @@ import { FaSuitcaseRolling, FaCalendarCheck } from 'react-icons/fa'
 
 import { useLoaderData, redirect } from 'react-router-dom'
 import customFetch from '../utils/customFetch'
-// ok to borrow / Wrapper
+
 import Wrapper from '../assets/wrappers/StatsContainer'
 import { toast } from 'react-toastify'
 import { StatItem } from '../components'
-// if not admin then re-direct
+
 export const loader = async () => {
   try {
     const response = await customFetch.get('/users/admin/app-stats')

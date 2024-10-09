@@ -11,9 +11,6 @@ const SearchContainer = () => {
   const submit = useSubmit()
 
   // returns a function
-  // in that function we invoke what ever we pass in as a parmater
-  // invoke the callback 2 secs after the last key stroke
-  /// *** cb was callback ***
   const debounce = (onChange) => {
     let timeout
     return (e) => {

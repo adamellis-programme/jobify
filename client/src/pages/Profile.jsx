@@ -8,23 +8,21 @@ import { toast } from 'react-toastify'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
-  // formData interface has the get method
+
   const file = formData.get('avatar')
-  // if file is present then do the chexk 0.5mb
+
   if (file && file.size > 500000) {
     toast.error('Image size too large')
     return null
   }
-  // TO PROCESS FORM DATA WE NEED MULTER -> avatar will be logged as BINARY in
-  // netwrok fetch AVATAR WIL BE BINARY
-  // IMAGE SENT AS BINARY -> SET UP ON SERVER
+
   try {
     await customFetch.patch('/users/update-user', formData)
     toast.success('Profile updated successfully')
   } catch (error) {
     toast.error(error?.response?.data?.msg)
   }
-  // return a final null is successful or not
+
   return null
 }
 
@@ -32,11 +30,10 @@ const Profile = () => {
   const { user } = useOutletContext()
   const { name, lastName, email, location } = user
 
-  // as file we do not send as json we use form data
+
   return (
     <Wrapper>
       {/* encription type */}
-      {/* if no file we set it up as jason but as using the img uploas we need to send form data */}
       <Form method="post" className="form" encType="multipart/form-data">
         <h4 className="form-title">profile</h4>
 

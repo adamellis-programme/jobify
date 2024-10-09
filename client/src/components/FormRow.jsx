@@ -16,5 +16,5 @@ const FormRow = ({ type, name, labelText, defaultValue = '', onChange }) => {
     </div>
   )
 }
-// label text can  be cammelCase
+
 export default FormRow

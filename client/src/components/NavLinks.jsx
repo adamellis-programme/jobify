@@ -9,12 +9,9 @@ const NavLinks = ({ isBigSidebar }) => {
     <div className="nav-links">
       {links.map((link) => {
         const { text, path, icon } = link
-        // console.log(path)
-        // admin user
+
         const { role } = user
-        // this stops the admin link being shown
-        // we have a route guard in the loader that redirects if not admin
-        // if not admin wil throw error and redirect
+
         if (path === 'admin' && role !== 'admin') return
         return (
           <NavLink
